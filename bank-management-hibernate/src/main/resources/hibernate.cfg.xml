@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+
+    <!-- PostgreSQL Config -->
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+
+    <property name="hibernate.connection.url">
+        jdbc:postgresql://localhost:5432/bank_db
+    </property>
+
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">root</property>
+
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+    <!-- Hibernate Features -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <property name="hibernate.show_sql">true</property>
+
+    <!-- Mapping -->
+    <mapping class="com.bank.dto.Customer"/>
+    <mapping class="com.bank.dto.Account"/>
+    <mapping class="com.bank.dto.Transaction"/>
+
+</session-factory>
+</hibernate-configuration>
